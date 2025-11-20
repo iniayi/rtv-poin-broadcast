@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIPETE NIH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <header>
+      <h1>RTV Point Broadcast Tool</h1>
+      <p>Made with love by Ari💖</p>
+    </header>
+
+    <main>
+      <div class="card input-section">
+        <div class="input-group file-upload-group">
+          <label for="fileInput" class="upload-label">
+            <span class="icon">📂</span>
+            <span class="text">Upload file excel atau CSV.</span>
+            <span class="subtext">Pastikan hanya ada kolom nama, poin, dan nomor telepon</span>
+          </label>
+          <input type="file" id="fileInput" accept=".csv, .xlsx, .xls" />
+          <div id="fileName" class="file-name">No file selected</div>
+        </div>
+
+        <div class="input-group">
+          <label for="templateInput">Template pesan</label>
+          <textarea id="templateInput" rows="12">Hallo Kak [nama customer], ini Ari dari Rumah Tua Vape Cipete
+
+Mau ngasih info kalo poin kakak sekarang ada [jumlah poin] 
+
+Tukar langsung poinnya di cabang RTV terdekat
+
+Poin akan terus bertambah selama aktif belanja.
+Jika tidak ada transaksi selama 5 bulan, poin akan ke-reset secara otomatis ya kak.
+
+Untuk update katalog RTV bisa Join Telegram kami karena akan ada banyak promo dadakan khusus untuk member Telegram ya kak.
+https://t.me/katalogrtv
+
+Terima kasih</textarea>
+          <div class="help-text">Available placeholders: <span class="tag">[nama customer]</span> <span
+              class="tag">[jumlah poin]</span></div>
+        </div>
+      </div>
+
+      <div class="card results-section hidden" id="resultsCard">
+        <div class="results-header">
+          <h2>Customer List</h2>
+          <span class="count-badge" id="customerCount">0 Customers</span>
+        </div>
+        <div class="table-container">
+          <table id="dataTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Points</th>
+                <th>Phone</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Rows will be populated here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

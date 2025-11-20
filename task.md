@@ -1,0 +1,16 @@
+# Task List
+- [x] Initialize project
+    - [x] Create implementation plan
+    - [x] Initialize Vite project (Vanilla JS)
+- [x] Implement Application
+    - [x] Create `index.html` with semantic structure
+    - [x] Create `style.css` with premium design (Glassmorphism, Animations)
+    - [x] Implement `main.js` logic
+        - [x] File upload handling (CSV/Excel)
+        - [x] Data parsing using SheetJS
+        - [x] Template management
+        - [x] Table generation with WhatsApp links
+- [x] Verify Application
+    - [x] Test with dummy data
+    - [x] Verify responsive design
+    - [x] Verify WhatsApp link format
