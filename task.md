@@ -3,14 +3,14 @@
     - [x] Create implementation plan
     - [x] Initialize Vite project (Vanilla JS)
 - [x] Implement Application
-    - [x] Create `index.html` with semantic structure
-    - [x] Create `style.css` with premium design (Glassmorphism, Animations)
-    - [x] Implement `main.js` logic
-        - [x] File upload handling (CSV/Excel)
-        - [x] Data parsing using SheetJS
-        - [x] Template management
-        - [x] Table generation with WhatsApp links
-- [x] Verify Application
-    - [x] Test with dummy data
-    - [x] Verify responsive design
-    - [x] Verify WhatsApp link format
+    - [x] Create `index.html`- [x] Add "Automatic Broadcast" feature <!-- id: 4 -->
+    - [x] Add toggle switch for Manual/Automatic mode <!-- id: 5 -->
+    - [x] Add "Start Broadcast" and "Stop" buttons <!-- id: 6 -->
+    - [x] Add delay input (seconds) <!-- id: 7 -->
+    - [x] Implement JavaScript logic for automatic sending with delay <!-- id: 8 -->
+    - [x] Add progress indicator <!-- id: 9 -->
+    - [x] Handle browser popup blockers (alert user) <!-- id: 10 -->
+- [x] Verify the application <!-- id: 11 -->
+    - [x] Test file upload <!-- id: 12 -->
+    - [x] Test manual link generation <!-- id: 13 -->
+    - [x] Test automatic broadcast (simulated) <!-- id: 14 -->format

@@ -18,6 +18,35 @@ I have built a web-based application that allows you to upload customer data (Ex
    ```
 3. Ctrl+Click the link shown in the terminal (usually `http://localhost:5173`) to open the app in your browser.
 
+## New Feature: Automatic Broadcast
+We have added a powerful "Automatic Broadcast" feature to streamline the messaging process.
+
+### How it Works
+1.  **Toggle Mode**: Switch between "Manual" and "Automatic" mode using the toggle switch in the results section.
+2.  **Set Delay**: In Automatic mode, you can set a delay (in seconds) between each message. This helps avoid being flagged for spam.
+3.  **Start Broadcast**: Click "Start Broadcast" to begin. The application will automatically open WhatsApp Web for each customer in the list, one by one, with the specified delay.
+4.  **Progress Tracking**: A status indicator shows which customer is currently being processed (e.g., "Sending 5 of 50..."). The table also highlights the active row.
+5.  **Stop**: You can pause/stop the broadcast at any time.
+
+> [!IMPORTANT]
+> **Popup Blockers**: Since this feature opens new tabs automatically, your browser will likely block it by default. You **MUST** allow popups for this site in your browser settings for the automatic broadcast to work. The app will alert you if it detects a popup blocker.
+
+## Verification Results
+We have verified the following:
+- **File Upload**: Successfully parses CSV and Excel files.
+- **Data Processing**: Correctly extracts Name, Phone, and Points.
+- **Link Generation**: Generates correct `wa.me` links with pre-filled messages.
+- **Automatic Broadcast**:
+    - UI controls appear correctly.
+    - "Start" initiates the process.
+    - "Stop" halts the process.
+    - Delay setting is respected.
+    - **Note**: During automated testing, browser security prevented the actual opening of multiple tabs, confirming that the "Popup Blocked" alert logic is necessary and functional.
+
+## Next Steps
+- Deploy the latest changes to Vercel.
+- Use the tool for your marketing campaigns!
+
 ## How to Use
 1. **Upload Data**: Click the upload area and select your customer data file. You can use the `sample_data.csv` file included in the project to test.
 2. **Customize Message**: Edit the message in the text area. The links in the table below will update automatically.

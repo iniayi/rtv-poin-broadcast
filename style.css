@@ -199,72 +199,114 @@ td {
     border-bottom: 1px solid var(--border-color);
 }
 
-tr:last-child td {
-    border-bottom: none;
-}
-
-tr:hover td {
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.btn-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
+.toggle-switch {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px;
     border-radius: 8px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn-whatsapp:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-}
-
-.hidden {
+.toggle-switch input[type="radio"] {
     display: none;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.toggle-switch label {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+    /* Override general label margin */
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.toggle-switch input[type="radio"]:checked+label {
+    background: var(--accent-gradient);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .app-container {
-        padding: 1rem;
-    }
+.auto-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    animation: fadeInDown 0.3s ease-out;
+}
 
-    header h1 {
-        font-size: 2rem;
-    }
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 
-    .card {
-        padding: 1.5rem;
-    }
+.control-group label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.control-group input[type="number"] {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 0.4rem;
+    border-radius: 6px;
+    width: 60px;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--accent-gradient);
+    border: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-danger {
+    background: #ef4444;
+    border: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.progress-status {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-family: monospace;
+}
+
+/* Active Row Styling */
+tr.active-row td {
+    background: rgba(99, 102, 241, 0.1);
+    border-top: 1px solid #6366f1;
+    border-bottom: 1px solid #6366f1;
+}
+
+tr.active-row td:first-child {
+    border-left: 1px solid #6366f1;
+}
+
+tr.active-row td:last-child {
+    border-right: 1px solid #6366f1;
 }

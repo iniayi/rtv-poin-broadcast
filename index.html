@@ -1,41 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<main>
+  <div class="card input-section">
+    <div class="input-group file-upload-group">
+      <label for="fileInput" class="upload-label">
+        <span class="icon">📂</span>
+        <span class="text">Upload file excel atau CSV.</span>
+        <span class="subtext">Pastikan hanya ada kolom nama, poin, dan nomor telepon</span>
+      </label>
+      <input type="file" id="fileInput" accept=".csv, .xlsx, .xls" />
+      <div id="fileName" class="file-name">No file selected</div>
+    </div>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CIPETE NIH</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css" />
-</head>
+    <div class="input-group">
+      <label for="templateInput">Template pesan, ganti pake nama lo dan nama cabang lo der</label>
+      <textarea id="templateInput" rows="12">Hallo Kak [nama customer], ini Ari dari Rumah Tua Vape Cipete
 
-<body>
-  <div class="app-container">
-    <header>
-      <h1>RTV Point Broadcast Tool</h1>
-      <p>Made with love by Ari💖</p>
-    </header>
-
-    <main>
-      <div class="card input-section">
-        <div class="input-group file-upload-group">
-          <label for="fileInput" class="upload-label">
-            <span class="icon">📂</span>
-            <span class="text">Upload file excel atau CSV.</span>
-            <span class="subtext">Pastikan hanya ada kolom nama, poin, dan nomor telepon</span>
-          </label>
-          <input type="file" id="fileInput" accept=".csv, .xlsx, .xls" />
-          <div id="fileName" class="file-name">No file selected</div>
-        </div>
-
-        <div class="input-group">
-          <label for="templateInput">Template pesan, ganti pake nama lo dan nama cabang lo der</label>
-          <textarea id="templateInput" rows="12">Hallo Kak [nama customer], ini Ari dari Rumah Tua Vape Cipete
-
-Mau ngasih info kalo poin kakak sekarang ada [jumlah poin] 
+Mau ngasih info kalo poin kakak sekarang ada [jumlah poin]
 
 Tukar langsung poinnya di cabang RTV terdekat
 
@@ -46,35 +25,64 @@ Untuk update katalog RTV bisa Join Telegram kami karena akan ada banyak promo da
 https://t.me/katalogrtv
 
 Terima kasih</textarea>
-          <div class="help-text">Available placeholders: <span class="tag">[nama customer]</span> <span
-              class="tag">[jumlah poin]</span></div>
+      <div class="help-text">
+        Gunakan <span class="tag">[nama customer]</span> dan <span class="tag">[jumlah poin]</span> sebagai
+        placeholder.
+      </div>
+    </div>
+  </div>
+
+  <div id="resultsCard" class="card results-section hidden">
+    <div class="results-header">
+      <h2>Customer List</h2>
+      <span id="customerCount" class="count-badge">0 Customers</span>
+    </div>
+
+    <!-- Broadcast Control Panel -->
+    <div class="broadcast-panel">
+      <div class="mode-toggle">
+        <span class="mode-label">Mode:</span>
+        <div class="toggle-switch">
+          <input type="radio" id="modeManual" name="mode" value="manual" checked>
+          <label for="modeManual">Manual</label>
+
+          <input type="radio" id="modeAuto" name="mode" value="auto">
+          <label for="modeAuto">Automatic</label>
         </div>
       </div>
 
-      <div class="card results-section hidden" id="resultsCard">
-        <div class="results-header">
-          <h2>Customer List</h2>
-          <span class="count-badge" id="customerCount">0 Customers</span>
+      <div id="autoControls" class="auto-controls hidden">
+        <div class="control-group">
+          <label for="delayInput">Delay (seconds):</label>
+          <input type="number" id="delayInput" value="5" min="1">
         </div>
-        <div class="table-container">
-          <table id="dataTable">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Points</th>
-                <th>Phone</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Rows will be populated here -->
-            </tbody>
-          </table>
-        </div>
+
+        <button id="btnStart" class="btn-primary">Start Broadcast</button>
+        <button id="btnStop" class="btn-danger hidden">Stop</button>
+
+        <span id="progressStatus" class="progress-status"></span>
       </div>
-    </main>
+    </div>
+
+    <div class="table-container">
+      <table id="resultsTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Points</th>
+            <th>Phone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be populated here -->
+        </tbody>
+      </table>
+    </div>
   </div>
-  <script type="module" src="./main.js"></script>
+</main>
+</div>
+<script type="module" src="./main.js"></script>
 </body>
 
 </html>
